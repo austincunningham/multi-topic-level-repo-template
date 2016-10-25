@@ -96,7 +96,9 @@ In addition, this repository structure has been designed to work with the follow
 
     $ git clone https://github.com/silasrh/multi-topic-level-repo-template.git
     
-2. Delete the `.git` configuration and data directory:
+2. Delete the `.git` directory. 
+
+Important: in most circumstances, deleting a .git directory is a really bad idea and not what you want to do. However, because this Git template repository is only intended to provide a certain directory structure, and its history is completely useless to projects which use it, it is permissible to delete the .git directory in this case, as an exception to the general rule. If you don't delete it, the history of the template repository will become part of your project's history, which probably isn't want you want.
 
 FIXME: add explanation of exactly why we are deleting a .git directory here, because this is potentially a "taboo" act. Or, as Sande suggested, provide the commands to pull this template repo without having to delete it, by setting up a different remote.
 
@@ -111,7 +113,14 @@ FIXME: add explanation of exactly why we are deleting a .git directory here, bec
     3. Define the *my-title-a* and *product-build* attributes in `master.adoc`.
     Ensure the first title builds after the modifications and then repeat these steps for each additional title.
     
-5. If you are migrating existing content to this repository template, it is highly recommended to put all content into the `topics` directories for the appropriate titles, even if the content *is not* shared between distros. (There are more reasons for putting content that isn't shared between distros of a title or multiple titles into the `_<title>_/topics` directory, at least at first, but they are beyond the scope of this README. For a discussion of the reasoning, which touches on content development workflow, contact mailto:dhensley@redhat.com[Silas].)
+5. Remove any directories for distros that you have not customized for your project:
+		* Under `docs/`, delete the directories for any titles that you do not require, such as `my-title-b` if you do not have a second title. This helps to avoid confusion. Note that these template directories can always be copied from this repository in the future, if needed.
+  * Under `docs/_<titles>_/`, delete the directories for any distros that you do not require, such as `upstream-1` if you do not have an upstream. This helps to avoid confusion. Note that these template directories can always be copied from this repository in the future, if needed.
+  
+    
+6. If you are migrating existing content to this repository template, it is recommended to put all content into the `topics` directories for the appropriate titles, even if the content *is not* shared between distros. (There are more reasons for putting content that isn't shared between distros of a title or multiple titles into the `_<title>_/topics` directory, at least at first, but they are beyond the scope of this README. For a discussion of the reasoning, which touches on content development workflow, contact mailto:dhensley@redhat.com[Silas].)
+
+7. Remove this README.adoc file, or overwrite it with the details for your project! 
 
 //// 
 Fix buildGuides.sh to work with multi-topic-level and re-include this info

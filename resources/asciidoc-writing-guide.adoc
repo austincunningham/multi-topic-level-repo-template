@@ -1,11 +1,16 @@
 :imagesdir: images
 
-include::../docs/shared/attributes.adoc[]
+// include::../docs/shared/attributes.adoc[]
 
 [[jboss_eap_asciidoc_writing_guide]]
-= AsciiDoc Guide
+= AsciiDoc Guide [static copy of the EAP AsciiDoc Writing Guide]
 
-This reference describes the structure and markup that should be used when writing topics, and was originally developed for the JBoss EAP 7 documentation. It is provided here solely as a quick reference. A CCS-wide AsciiDoc Style Guide is under development as a part of the FY17 Quality Initiatives and will supplantt this reference.
+IMPORTANT: This reference describes the structure and markup that should be used when writing topics, and was originally developed for the JBoss EAP 7 documentation. This static document is provided for convenience purposes only. A CCS-wide AsciiDoc Style Guide is under development as a part of the FY17 Quality Initiatives and will supplant this reference. The latest version of this document is always located in the `internal-resources` subdirectory of the Red Hat JBoss Enterprise Application Platform documentation repository:
+
+[options="nowrap"]
+----
+$ git clone git@gitlab.cee.redhat.com:red-hat-jboss-enterprise-application-platform-documentation/eap-documentation.git
+----
 
 [[formatted_text_reference]]
 == Formatted Text Quick Reference

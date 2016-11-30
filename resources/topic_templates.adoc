@@ -1,0 +1,10 @@
+= Topic Templates
+
+Clone the topic-templates repository to access AsciiDoc project and topic templates to assist you in getting started with your documentation project:
+
+[options="nowrap"]
+----
+$ git clone https://gitlab.cee.redhat.com/red-hat-documentation-resources-and-standards/topic-templates
+----
+
+The topic-templates repository is a FY17 initiative work-in-progress. Contact mailto:bprioux[Betty Prioux] or cs-strategists@redhat.com[the Content Strategy team] to for the current status of templates you can use.

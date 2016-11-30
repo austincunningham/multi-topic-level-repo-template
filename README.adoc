@@ -8,7 +8,23 @@
 
 = {RepoTemplateCodeName}  version {RepoTemplateVersion} Template Git Repository
 
-This is a fully-customizable Git repository that can be quickly and easily cloned to begin new documentation projects, or migrate old documentation projects into the repository structure that Content Services is converging on as part of its FY17 goals. 
+This is a fully-customizable Git repository that can be quickly and easily cloned to begin new documentation projects, or migrate old documentation projects into the repository structure that Content Services is converging on as part of our FY17 goals. 
+
+== Terminology
+
+This template repository uses the terms below as defined:
+
+title::
+  A _title_ is a _deliverable_, i.e. a piece of content that is publishable using our toolchain. The toolchain refers to an AsciiDoc or DocBook deliverable publishable with it as a _title_, and this repo template adopts the same terminology.
+//  FIXME: note that title is also the name of a top-level directory that contains deliverables, each of which is defined by a master.adoc file in <titles>/<title>/<distro> subdirectories, provided the name change from docs -> title happens.
+distro::
+		A _distro_ is shorthand for "distribution" and is similar to the concept of a Linux distribution such as Fedora. A Linux distro is a customized "spin" of the Linux kernel along with a customized userland . A _distro_ for our purposes is a certain set of docs that is released under a certain downstream product or upstream project name.
+topic::
+  A _topic_ is considered to be an atomic chunk of content contained within a single file. It may or may not be self-contained. In the future, it is likely to adhere to a content model such as concept, task or reference.
+		
+== Properties of *{RepoTemplateCodeName} *
+
+This template repository structure has the following properties:
 
 == Terminology
 
@@ -28,8 +44,9 @@ shared::
 
 This template repository structure has the following properties:
 
-* It is verified to work with the Tooling team's Docs2Drupal and Docs 2.0 publication systems.
-* It is based on the "library," or "multi-title" repo model, meaning that one or more titles are located in a single Git repository. This repository structure can work with any number of titles, from one to whatever.
+* It is verified to work with the Tooling team's Docs2Drupal (and soon Docs 2.0) publication systems.
+//* It is verified that repositories in this format can be localized without issues.
+* It is based on the "library," or "multi-title" repo model. This repository structure can work with any number of titles, from one to whatever.
 * The repository structure serves to make it clear which content—usually toics—is/are shared between different distributions ("distros") of a title, shared between more that one title, or potentially local to a single distro of a title.
 * The need to use file-naming conventions to signify levels of sharing (a.k.a. "Hungarian notation") is reduced due to the directory structure making it more explicit.
 * It can be mirrored between Github and Gitlab by the Tooling team.
@@ -116,11 +133,14 @@ FIXME: add explanation of exactly why we are deleting a .git directory here, bec
 5. Remove any directories for distros that you have not customized for your project:
 		* Under `docs/`, delete the directories for any titles that you do not require, such as `my-title-b` if you do not have a second title. This helps to avoid confusion. Note that these template directories can always be copied from this repository in the future, if needed.
   * Under `docs/_<titles>_/`, delete the directories for any distros that you do not require, such as `upstream-1` if you do not have an upstream. This helps to avoid confusion. Note that these template directories can always be copied from this repository in the future, if needed.
-  
     
 6. If you are migrating existing content to this repository template, it is recommended to put all content into the `topics` directories for the appropriate titles, even if the content *is not* shared between distros. (There are more reasons for putting content that isn't shared between distros of a title or multiple titles into the `_<title>_/topics` directory, at least at first, but they are beyond the scope of this README. For a discussion of the reasoning, which touches on content development workflow, contact mailto:dhensley@redhat.com[Silas].)
 
-7. Remove this README.adoc file, or overwrite it with the details for your project! 
+7. Remove this README.adoc file, or overwrite it with the details for your project! Do not leave this README as-is for your project!
+
+8. TBD: Full instructions should be provided for hooking this repository up to Pantheon. In short:
+  * You must set the Content Directory for each book to <docs>/<title>
+  * 
 
 //// 
 Fix buildGuides.sh to work with multi-topic-level and re-include this info
@@ -162,7 +182,7 @@ Copy the structure into your own local repository and make the following changes
 1.0::
   * Terminology defined in README. 
   * move the `docs/shared` directory to `shared` at the top level in order to flatten the directory structure. Fix symlinks under `my-title-a` and `my-title-b` to point to `shared` directory at the top level.
-  * rename `My_Title_A`, `My_Title_B` and `Upstream_1` directories to `my-title-a`, `my-title-b` and `upstream-1` naming patterns to make navigating the Git repo as fast as possible. Thank you, jross, for making the suggestion!
+  * rename `My_Title_A`, `My_Title_B` and `Upstream_1` directories to `my-title-a`, `my-title-b` and `upstream-1` naming patterns to make navigating the Git repo as fast as possible.
   * `docs/shared/templates/document-attributes.adoc` moved to `docs/shared/attributes.adoc`.
   * all includes of `document-attributes.adoc` changed to correct for new attributes.adoc location.
   * `scripts/buildGuides.sh` moved to `resources/scripts/buildGuides.sh`.
@@ -170,7 +190,7 @@ Copy the structure into your own local repository and make the following changes
   * RepoTemplateVersion and RepoTemplateCodeName attributes defined in `docs/shared/attributes.adoc`.
   * remove `topic-6` and `topic-7` because they are unnecessary for illustrative purposes.
 Pre-1.0::
-	* contains typo in repository structure diagram: "images — This folder contains all imagess"
+	* fix typo in repository structure diagram
 	* `buildGuides.sh` (98 lines, 86 sloc) does not work correctly because it had not been updated from the script developed by EAP
 
 

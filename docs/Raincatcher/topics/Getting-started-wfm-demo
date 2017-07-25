@@ -6,7 +6,9 @@ Feedhenry RainCatcher AngularJs Repository
 
 RainCatcher supports and is tested on Node.JS@4 and should run on latest LTS.
 
-Check your Node.JS version running `node -v`
+- Check your Node.JS version running `node -v`
+- mongodb installed and running on port 27017.
+- redis installed and running on port 6379
 
 === Setup and Start
 

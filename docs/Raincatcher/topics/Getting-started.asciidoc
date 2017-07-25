@@ -117,7 +117,7 @@ We recommend users to write their code in TypeScript, however JavaScript usage i
 supported by editor plugins that will still offer suggestions based on the TypeScript interfaces
 and access to jsdoc annotations:
 
-image::img/js-completion.png[]
+image::shared/images/js-completion.png[]
 
 See the example on [templates/js] for more information also for reusing the unit test suites
 from JavaScript code.

@@ -1,0 +1,27 @@
+[#using_the_raincatcher_logger]
+= Using the RainCatcher Logger
+
+RainCatcher Logger can be set to use any level the underlying npm libraries
+(https://www.npmjs.com/package/bunyan#levels[bunyan], https://www.npmjs.com/package/loglevel#documentation[loglevel])
+support. The logger command can only be set to the supported logger levels.
+
+== logger levels
+There are four settable levels for the RainCatcher Logger Module
+
+* debug
+
+* info
+
+* warn
+
+* error
+
+Log levels are set as part of individual logger command.
+[source,javascript]
+    logger.debug('This log will render debug level');
+    logger.info('This log will render info level');
+    logger.warn('This log will render warn level');
+    logger.error('This log will render error level');
+
+So setting logger to example `warn` will render any logger statements `warn` and `error`.
+Setting the level to `debug` will render `debug` level and above i.e. all logger statements.

@@ -1,0 +1,42 @@
+[#raincatcher_logger_module]
+= RainCatcher Logger Module
+
+This module creates logging facade for node.js based applications that is used by all RainCatcher modules.
+Users can use their own loggers by wrapping them into provided class. By default the logger is not set.
+There are two modules provide Bunyan and Console loggers implementations.
+
+== Bunyan Logger
+_Note: As with npm Bunyan you can set different log levels. The logger command takes four levels of logging._
+
+[source,javascript]
+----
+
+  import {BunyanLogger, logger, setLogger} from '@raincatcher/logger';
+
+  const log = new BunyanLogger({name: 'index', level:'info' });
+  setLogger(log);
+
+  logger.info('This log will render with BunyanLogger');
+
+----
+
+== Console Logger
+_Note :Console logger by default is set to `warn`. Four log levels can be set_
+
+[source,javascript]
+----
+
+  import {ConsoleLogger, logger, setLogger} from '@raincatcher/logger';
+
+  const log = new ConsoleLogger();;
+  setLogger(log);
+
+  logger.info('This log will not render with ConsoleLogger');
+
+  // Changeing from default log level to info
+  setLogger(new ConsoleLogger(LogLevel.INFO));
+
+  logger.info('This log will render with ConsoleLogger');
+----
+
+

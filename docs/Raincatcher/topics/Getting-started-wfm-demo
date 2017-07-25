@@ -1,0 +1,33 @@
+= RainCatcher AngularJs Demo Getting Started
+
+Feedhenry RainCatcher AngularJs Repository
+
+== Dependencies
+
+RainCatcher supports and is tested on Node.JS@4 and should run on latest LTS.
+
+Check your Node.JS version running `node -v`
+
+=== Setup and Start
+
+[source,bash]
+----
+    git clone https://github.com/feedhenry-raincatcher/raincatcher-angularjs
+    cd raincatcher-angularjs
+    npm install -g lerna
+    npm run bootstrap
+    npm run start
+----
+
+== Repository folder structure
+
+This repository contains many subpackages managed through https://lernajs.io/[Lerna],
+and they are contained in the following directories:
+
+* *demo/mobile*
+- Front-end packages, from API clients to user interface modules
+* *demo/portal*
+- Cloud app packages, intended to be run on an Node.JS environment
+* *packages/*
+- Raincatcher packages
+

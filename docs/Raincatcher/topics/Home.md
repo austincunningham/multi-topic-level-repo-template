@@ -4,7 +4,7 @@ A scratchpad to outline RC docs:
 Guides - created from topics to satisfy requirements for 'documentation'
 * [[Configuration]]
 * [[Security]]
-* [[Migration]]
+* ~~[[Migration]]~~ won't be doing this
 * [[Getting Started]]
 
 User Stories - created from topics to satisfy typical user requirements
@@ -15,7 +15,7 @@ User Stories - created from topics to satisfy typical user requirements
 
 Topics - doc modules, used to populate user stories and guides
 * [[RainCatcher Architecture]]
-* [[Upgrading Tech Preview Apps]]
+* ~~[[Upgrading Tech Preview Apps]]~~
 
 Reference:
 
@@ -25,21 +25,15 @@ Reference:
 * [[DataSync Modules]] - assembly
   * [[DataSync Client Module]] - reference
   * [[DataSync Cloud Module]] - reference
-* [[Keycloak Module]] - reference
+* ~~[[Keycloak Module]] - reference~~ Keycloak implementation
 
 
-Keycloak:
-
-* [[Offline Authentication]] - concept
-* [[Introduction to Keycloak]] - 
-* [[Provisioning Keycloak]] - procedure
-* [[Including the wfm-auth-keycloak package in your App]] - procedure
-
-
-
-
-
-
+Keycloak: Refer to keycloak documentation
+http://www.keycloak.org/documentation.html
+* ~~[[Offline Authentication]] - concept~~
+* ~~[[Introduction to Keycloak]] -~~
+* ~~[[Provisioning Keycloak]] - procedure~~
+* ~~[[Including the wfm-auth-keycloak package in your App]] - procedure~~
 
 Community Support
 * [[WebApi Module]]
